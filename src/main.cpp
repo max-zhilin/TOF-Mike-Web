@@ -1,15 +1,27 @@
 
 // https://www.electronicwings.com/esp32/vl53l0x-sensor-interfacing-with-esp32
 // Nln works! 
+#include <Arduino.h>
+
+#ifdef ARDUINO_ARCH_ESP32
+
+#include <WiFi.h>
+#include <WebServer.h>
+WebServer server(80);
+
+#elif defined(ARDUINO_ARCH_ESP8266)
 
 #include <ESP8266WiFi.h>
 #include <ESP8266WebServer.h>
+ESP8266WebServer server(80);
+
+#endif
+
 #include "html.h"
 #include <Wire.h>
 #include <VL53L1X.h>   //Pololu
 #include <passwords.h> // our WiFi passwords
 
-ESP8266WebServer server(80);
 VL53L1X sensor;
 
 int measuredDist;
