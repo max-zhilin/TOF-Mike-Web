@@ -1,7 +1,6 @@
 
 // https://www.electronicwings.com/esp32/vl53l0x-sensor-interfacing-with-esp32
 // Nln works! 
-#include <Arduino.h>
 
 #ifdef ARDUINO_ARCH_ESP32
 
