@@ -12,13 +12,7 @@ ESP8266WebServer server(80);
 VL53L1X sensor;
 
 const char* ssid     = "AndroidAP8459";
-const char* password = "tyyu2849";
-//const char* ssid     = "Uni_Mkl";
-//const char* password = "AAA123abcd";
-//const char* ssid     = "nelen5g";
-//const char* password = "rKYHcc3a";
-//const char* ssid     = "Mkl Nt8";
-//const char* password = "AAA123ABCD";
+const char* password = "yourpass";
 
 int measuredDist;
 int sensorHeight = 300;               //установочная высота сенсора от пола в cm
@@ -31,11 +25,8 @@ void MainPage() {
 }
 
 void MeasuredData() {
-  Serial.print("MeasuredData()");
   String data = "[\"" + String(palletHeight) + "\", \"" + String(sensorHeight) + "\", \"" + String(measuredDist) + "\"]";
-  Serial.print(data);
   server.send(200, "text/plane", data);
-  Serial.print("data sent");
 }
 
 void setup(void){
