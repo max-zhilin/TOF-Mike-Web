@@ -28,7 +28,7 @@ const char html_page[] PROGMEM = R"rawliteral(
         const myArr = JSON.parse(text);
         document.getElementById("_palHeight").innerHTML = myArr[0];
         document.getElementById("_sensHeight").innerHTML = myArr[1];
-	document.getElementById("_realDist").innerHTML = myArr[2];
+	      document.getElementById("_realDist").innerHTML = myArr[2];
       }
     };
     xhttp.open("GET", "readHightData", true);
