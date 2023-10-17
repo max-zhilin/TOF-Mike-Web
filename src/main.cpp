@@ -7,12 +7,10 @@
 #include "html.h"
 #include <Wire.h>
 #include <VL53L1X.h>   //Pololu
+#include <passwords.h> // our WiFi passwords
 
 ESP8266WebServer server(80);
 VL53L1X sensor;
-
-const char* ssid     = "AndroidAP8459";
-const char* password = "yourpass";
 
 int measuredDist;
 int sensorHeight = 300;               //установочная высота сенсора от пола в cm
